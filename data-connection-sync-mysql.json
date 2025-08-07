@@ -1,0 +1,69 @@
+{
+  "jobId": "job-002-mysql-products",
+  "jobType": "DATA_CONNECTION_SYNC",
+  "name": "Product Catalog Sync - MySQL",
+  "description": "Import product catalog from MySQL database to Phoenix",
+  "projectId": "proj-ecommerce-prod",
+  "createdBy": "user-data-connection-app",
+  "createdAt": "2025-01-01T11:00:00Z",
+  
+  "payload": {
+    "sourceConnector": {
+      "type": "MySQL",
+      "connectionString": "Server=localhost;Port=3306;Database=ecommerce;Uid=testuser;Pwd=testpass",
+      "query": "SELECT product_id, sku, name, price, category_id, inventory_count FROM products WHERE status = 'active'",
+      "incremental": {
+        "enabled": false
+      }
+    },
+    
+    "destinationConnector": {
+      "type": "Phoenix",
+      "connectionString": "DATABASE=s3a://test-bucket/ecommerce/products/{TABLE}.parquet;SparkMaster=local[*];UseS3Storage=true;S3Endpoint=http://localhost:9000;S3AccessKey=minioadmin;S3SecretKey=minioadmin123;S3BucketName=test-bucket",
+      "tableName": "products_raw",
+      "writeMode": "overwrite",
+      "partitionColumns": ["category_id"]
+    },
+    
+    "loadTables": [
+      {
+        "name": "products_raw",
+        "type": "DataTable",
+        "staticLoadType": "Full",
+        "topRows": 0,
+        "whereCondition": "status = 'active'",
+        "columns": [
+          {"name": "product_id", "dataType": "INTEGER", "isPrimaryKey": true},
+          {"name": "sku", "dataType": "STRING"},
+          {"name": "name", "dataType": "STRING"},
+          {"name": "price", "dataType": "DECIMAL"},
+          {"name": "category_id", "dataType": "INTEGER"},
+          {"name": "inventory_count", "dataType": "INTEGER"}
+        ]
+      }
+    ]
+  },
+  
+  "executionConfig": {
+    "resourceProfile": "LARGE",
+    "timeout": "PT45M",
+    "priority": "HIGH",
+    "retryPolicy": {
+      "maxAttempts": 2,
+      "backoffStrategy": "LINEAR"
+    },
+    "sparkConfig": {
+      "driverMemory": "4g",
+      "executorMemory": "8g",
+      "executorCores": 4
+    }
+  },
+  
+  "metadata": {
+    "source": "Data Connection App",
+    "category": "product_data",
+    "tags": ["mysql", "full_sync", "products", "ecommerce"],
+    "expectedRows": 50000,
+    "businessOwner": "product-team"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "jobId": "job-001-postgres-customers",
+  "jobType": "DATA_CONNECTION_SYNC",
+  "name": "Daily Customer Data Sync - PostgreSQL",
+  "description": "Import customer data from production PostgreSQL database to Phoenix",
+  "projectId": "proj-analytics-prod",
+  "createdBy": "user-data-connection-app",
+  "createdAt": "2025-01-01T10:00:00Z",
+  
+  "payload": {
+    "sourceConnector": {
+      "type": "PostgreSQL",
+      "connectionString": "Host=localhost;Port=5432;Database=testdb;Username=testuser;Password=testpass",
+      "query": "SELECT customer_id, email, first_name, last_name, created_date, status FROM customers WHERE updated_at > @incrementalValue AND status = 'active'",
+      "incremental": {
+        "enabled": true,
+        "column": "updated_at",
+        "lastValue": "2024-12-31T00:00:00Z"
+      }
+    },
+    
+    "destinationConnector": {
+      "type": "Phoenix",
+      "connectionString": "DATABASE=s3a://test-bucket/analytics/customers/{TABLE}.parquet;SparkMaster=local[*];UseS3Storage=true;S3Endpoint=http://localhost:9000;S3AccessKey=minioadmin;S3SecretKey=minioadmin123;S3BucketName=test-bucket",
+      "tableName": "customers_raw",
+      "writeMode": "append",
+      "partitionColumns": ["import_date"]
+    },
+    
+    "loadTables": [
+      {
+        "name": "customers_raw",
+        "type": "DataTable",
+        "staticLoadType": "Incremental",
+        "topRows": 0,
+        "whereCondition": "status = 'active'",
+        "columns": [
+          {"name": "customer_id", "dataType": "INTEGER", "isPrimaryKey": true},
+          {"name": "email", "dataType": "STRING"},
+          {"name": "first_name", "dataType": "STRING"},
+          {"name": "last_name", "dataType": "STRING"},
+          {"name": "created_date", "dataType": "TIMESTAMP"},
+          {"name": "status", "dataType": "STRING"}
+        ]
+      }
+    ]
+  },
+  
+  "executionConfig": {
+    "resourceProfile": "MEDIUM",
+    "timeout": "PT30M",
+    "priority": "NORMAL",
+    "retryPolicy": {
+      "maxAttempts": 3,
+      "backoffStrategy": "EXPONENTIAL"
+    },
+    "sparkConfig": {
+      "driverMemory": "2g",
+      "executorMemory": "4g",
+      "executorCores": 2
+    }
+  },
+  
+  "metadata": {
+    "source": "Data Connection App",
+    "category": "customer_data",
+    "tags": ["postgresql", "daily_sync", "customers"],
+    "expectedRows": 10000,
+    "businessOwner": "analytics-team"
+  }
+}
