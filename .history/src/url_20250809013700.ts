@@ -21,3 +21,5 @@ export const exploreSourceWithColumnsById =
   '/api/data-loader-bff/api/v1/Connection/{id}/explore-source-with-columns';
 export const previewSource =
   '/api/data-loader-bff/api/v1/Connection/preview-source';
+
+// area-chart-control

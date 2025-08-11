@@ -1,0 +1,5061 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "DataMicron.Phoenix.DataLoader.Bff.WebApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/data-loader-bff/api/v1/Connection": {
+      "post": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.CreateConnectionCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.CreateConnectionCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.CreateConnectionCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.UpdateConnectionCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.UpdateConnectionCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.UpdateConnectionCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/{id}": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/project/{projectId}": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/search": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectorType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/test": {
+      "post": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.TestConnectionCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.TestConnectionCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.TestConnectionCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/{id}/test": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/connector-types": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/connector-parameters/{connectorType}": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "connectorType",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/column-categories/{category}/data-types": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/discover-databases": {
+      "post": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.DiscoverDatabasesCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.DiscoverDatabasesCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.DiscoverDatabasesCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/{id}/explore-source": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/{id}/explore-source-with-columns": {
+      "get": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/preview-source": {
+      "post": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Connection/preview-source-with-columns": {
+      "post": {
+        "tags": ["Connection"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceWithColumnsCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceWithColumnsCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceWithColumnsCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source": {
+      "post": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.CreateSourceCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.CreateSourceCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.CreateSourceCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.UpdateSourceCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.UpdateSourceCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.UpdateSourceCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source/{id}": {
+      "get": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source/connection/{connectionId}": {
+      "get": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source/status/{status}": {
+      "get": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source/sync-status/{syncStatus}": {
+      "get": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "syncStatus",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source/search": {
+      "get": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source/name-unique": {
+      "get": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "excludeId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Source/{id}/validate": {
+      "post": {
+        "tags": ["Source"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync": {
+      "post": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.CreateSyncCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.CreateSyncCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.CreateSyncCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.UpdateSyncCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.UpdateSyncCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.UpdateSyncCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/{id}": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/source/{sourceId}": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "sourceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/connection/{connectionId}": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/dataset/{datasetId}": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "datasetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/status/{status}": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/sync-status/{syncStatus}": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "syncStatus",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/scheduled": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/{id}/start": {
+      "post": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/{id}/stop": {
+      "post": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/search": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "syncStatus",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "datasetId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-loader-bff/api/v1/Sync/check-name-unique": {
+      "get": {
+        "tags": ["Sync"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "excludeId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProjectId",
+            "in": "header",
+            "description": "Current project id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.CreateConnectionCommand": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "projectId": {
+            "type": "string",
+            "nullable": true
+          },
+          "folderId": {
+            "type": "string",
+            "nullable": true
+          },
+          "rid": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "config": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.DiscoverDatabasesCommand": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionConfig": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceCommand": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionConfig": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.PreviewSourceWithColumnsCommand": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionConfig": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.TestConnectionCommand": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionConfig": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Connection.Commands.UpdateConnectionCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "config": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.CreateSourceCommand": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceConfig": {
+            "$ref": "#/components/schemas/Entities.SourceConfig"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entities.SourceColumn"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Source.Commands.UpdateSourceCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceConfig": {
+            "$ref": "#/components/schemas/Entities.SourceConfig"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entities.SourceColumn"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.CreateSyncCommand": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "datasetId": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/Entities.SyncSchedule"
+          },
+          "syncConfig": {
+            "$ref": "#/components/schemas/Entities.SyncConfig"
+          },
+          "columnMappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entities.ColumnMapping"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Application.Features.Sync.Commands.UpdateSyncCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/Entities.SyncSchedule"
+          },
+          "syncConfig": {
+            "$ref": "#/components/schemas/Entities.SyncConfig"
+          },
+          "columnMappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entities.ColumnMapping"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiErrorResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "nullable": true
+          },
+          "error": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ErrorData"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiListResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiOperationResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.OperationData"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ApiResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ErrorData": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ErrorDetail"
+            },
+            "nullable": true
+          },
+          "stackTrace": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.ErrorDetail": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.OperationData": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "affectedId": {
+            "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasNext": {
+            "type": "boolean"
+          },
+          "hasPrevious": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasNext": {
+            "type": "boolean"
+          },
+          "hasPrevious": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasNext": {
+            "type": "boolean"
+          },
+          "hasPrevious": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasNext": {
+            "type": "boolean"
+          },
+          "hasPrevious": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.Common.PaginationData`1[[DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto, DataMicron.Phoenix.DataLoader.Bff.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasNext": {
+            "type": "boolean"
+          },
+          "hasPrevious": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.ConnectionDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "projectId": {
+            "type": "string",
+            "nullable": true
+          },
+          "folderId": {
+            "type": "string",
+            "nullable": true
+          },
+          "rid": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "config": {
+            "type": "object",
+            "additionalProperties": {},
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ColumnDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataType": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "$ref": "#/components/schemas/Enums.ColumnCategory"
+          },
+          "isNullable": {
+            "type": "boolean"
+          },
+          "isPrimaryKey": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.DatabaseItemDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "owner": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ResourceItemDto"
+            },
+            "nullable": true
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Connection.Models.ColumnDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceColumnDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataType": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "$ref": "#/components/schemas/Enums.ColumnCategory"
+          },
+          "isNullable": {
+            "type": "boolean"
+          },
+          "isPrimaryKey": {
+            "type": "boolean"
+          },
+          "isSelected": {
+            "type": "boolean"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxLength": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "precision": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "scale": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceConfigDto": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string",
+            "nullable": true
+          },
+          "schema": {
+            "type": "string",
+            "nullable": true
+          },
+          "tableName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sizeInMB": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "query": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "syncStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastValidatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastValidationResult": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceConfig": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceConfigDto"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sources.SourceColumnDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.ColumnMappingDto": {
+        "type": "object",
+        "properties": {
+          "sourceColumn": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationColumn": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "nullable": {
+            "type": "boolean"
+          },
+          "primaryKey": {
+            "type": "boolean"
+          },
+          "transformation": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncConfigDto": {
+        "type": "object",
+        "properties": {
+          "syncMode": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parallelism": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retryCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retryDelay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "incrementalColumn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereClause": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "syncStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "datasetId": {
+            "type": "string",
+            "nullable": true
+          },
+          "connectionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncScheduleDto"
+          },
+          "syncConfig": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncConfigDto"
+          },
+          "columnMappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.ColumnMappingDto"
+            },
+            "nullable": true
+          },
+          "monitoring": {
+            "$ref": "#/components/schemas/DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncMonitoringDto"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncMonitoringDto": {
+        "type": "object",
+        "properties": {
+          "lastRunAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "nextRunAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastRunStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastRunDuration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "recordsProcessed": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "recordsSuccess": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "recordsError": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "averageDuration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "successRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "lastErrorMessage": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataMicron.Phoenix.DataLoader.Bff.Contracts.DTOs.Sync.SyncScheduleDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "expression": {
+            "type": "string",
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
+            "nullable": true
+          },
+          "isEnabled": {
+            "type": "boolean"
+          },
+          "intervalMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entities.ColumnMapping": {
+        "type": "object",
+        "properties": {
+          "sourceColumn": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationColumn": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "nullable": {
+            "type": "boolean"
+          },
+          "primaryKey": {
+            "type": "boolean"
+          },
+          "transformation": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entities.SourceColumn": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataType": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "$ref": "#/components/schemas/Enums.ColumnCategory"
+          },
+          "isNullable": {
+            "type": "boolean"
+          },
+          "isPrimaryKey": {
+            "type": "boolean"
+          },
+          "isSelected": {
+            "type": "boolean"
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxLength": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "precision": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "scale": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entities.SourceConfig": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string",
+            "nullable": true
+          },
+          "schema": {
+            "type": "string",
+            "nullable": true
+          },
+          "tableName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "rowCount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sizeInMB": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "query": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entities.SyncConfig": {
+        "type": "object",
+        "properties": {
+          "syncMode": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parallelism": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeout": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retryCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "retryDelay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "incrementalColumn": {
+            "type": "string",
+            "nullable": true
+          },
+          "whereClause": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entities.SyncSchedule": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "expression": {
+            "type": "string",
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
+            "nullable": true
+          },
+          "isEnabled": {
+            "type": "boolean"
+          },
+          "intervalMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Enums.ColumnCategory": {
+        "enum": [0, 1, 2, 3, 4, 5, 6],
+        "type": "integer",
+        "format": "int32"
+      }
+    }
+  }
+}

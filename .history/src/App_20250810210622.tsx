@@ -1,5 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
+import {
+  baseURL,
+  connection,
+  connectionSearch,
+  connectorTypes,
+  connectionById,
+} from './url';
 import { Button } from '@mantine/core';
 
 import { createStore } from 'effector';

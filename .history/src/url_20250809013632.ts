@@ -21,3 +21,35 @@ export const exploreSourceWithColumnsById =
   '/api/data-loader-bff/api/v1/Connection/{id}/explore-source-with-columns';
 export const previewSource =
   '/api/data-loader-bff/api/v1/Connection/preview-source';
+
+
+
+
+
+
+   
+
+   
+
+
+
+
+
+ // area-chart-control
+
+ 
+  private loading: boolean;
+
+    if (options.type === VisualUpdateType.Loading) {
+      if (options.loading) {
+        this.chart.showLoading('default', {
+          text: '',
+          color: '#1971c2',
+          textColor: '#333',
+          maskColor: 'rgba(255, 255, 255, 0.6)',
+        });
+      } else {
+        this.chart.hideLoading();
+      }
+      return;
+    }

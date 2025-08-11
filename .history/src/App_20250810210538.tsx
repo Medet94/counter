@@ -1,5 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react';
+import {
+  baseURL,
+  connection,
+  connectionSearch,
+  connectorTypes,
+  connectionById,
+} from './url';
 import { Button } from '@mantine/core';
 
 import { createStore } from 'effector';
@@ -12,6 +19,9 @@ $counter.watch((state) => {
 
 export const App = () => {
   const [count, setCount] = useState(0);
+  // fetch(`${baseURL}${connectorTypes}`)
+  //   .then((res) => res.json())
+  //   .then((data) => console.log('This is the data', data));
 
   console.log(count);
 

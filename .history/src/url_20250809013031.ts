@@ -21,3 +21,50 @@ export const exploreSourceWithColumnsById =
   '/api/data-loader-bff/api/v1/Connection/{id}/explore-source-with-columns';
 export const previewSource =
   '/api/data-loader-bff/api/v1/Connection/preview-source';
+
+// Testing
+
+//ControlsHost
+
+controlRef.current.init({
+  settings: control.settings,
+  loading: pending,
+  size: {
+    width: containerRef.current.clientWidth,
+    height: containerRef.current.clientHeight,
+  },
+});
+
+useEffect(() => {
+  if (!controlRef.current) return;
+
+  controlRef.current.update({
+    type: VisualUpdateType.Loading,
+    loading: pending,
+  });
+}, [pending]);
+
+// visual-options.ts
+
+export type VisualOptions = VisualData &
+  VisualSettings &
+  VisualStyles &
+  VisualMode &
+  VisualLoading &
+  VisualSize;
+
+
+   | ({ type: VisualUpdateType.Loading } & VisualLoading)
+
+   
+export interface VisualLoading {
+  loading: boolean;
+}
+
+
+ Loading = 'Loading',
+
+ // area-chart-control
+
+ 
+  private loading: boolean;
